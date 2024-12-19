@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Struk Transaksi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+       
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Struk Transaksi</h2>
+
+<table>
+    <tr>
+        <td>Tanggal Transaksi</td>
+        <td>: 01 November 2024</td>
+    </tr>
+    <tr>
+        <td>Produk</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Diapers (10 X...)</td>
+        <td>: Rp51.880</td>
+    </tr>
+    <tr>
+        <td>Baju Bayi (17 X...)</td>
+        <td>: Rp 603.500</td>
+    </tr>
+    <tr>
+        <td>Minyak Telon (12 X...)</td>
+        <td>:Rp 381.480 </td>
+    </tr>
+    <tr>
+        <td>Bedak (4 X...)</td>
+        <td>: Rp 254.700</td>
+    </tr>
+    <tr>
+        <td>Shampo (7 X...)</td>
+        <td>: Rp 413.400</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>: Rp 1.704.960 </td>
+    </tr>
+    <tr>
+        <td>Diskon</td>
+        <td>:20%</td>
+    </tr>
+    <tr>
+        <td>Total Pembayaran</td>
+        <td>: Rp 1.363.968</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Form Pembelian</h1>
+<form action="struk_pembelian.php" method="POST">
+    <label for="nama_toko">Nama Toko:</label><br>
+    <input type="text" id="nama_toko" name="nama_toko" required><br>
+
+    <label for="alamat_toko">Alamat Toko:</label><br>
+    <input type="text" id="alamat_toko" name="alamat_toko" required><br>
+
+    <label for="no_telp">Nomor Telepon:</label><br>
+    <input type="text" id="no_telp" name="no_telp" required><br>
+
+    <label for="item">Nama Barang:</label><br>
+    <input type="text" id="item" name="item[]" required><br>
+
+    <label for="harga">Harga:</label><br>
+    <input type="number" id="harga" name="harga[]" required><br>
+
+    <label for="jumlah">Jumlah:</label><br>
+    <input type="number" id="jumlah" name="jumlah[]" required><br>
+
+    <button type="button" onclick="addItem()">Tambah Item</button><br><br>
+    <button type="submit">Buat Struk</button>
+</form>
+
+<script>
+function addItem() {
+    const itemInput = document.createElement('input');
+    itemInput.setAttribute('type', 'text');
+    itemInput.setAttribute('name', 'item[]');
+    itemInput.setAttribute('placeholder', 'Nama Barang');
+    
+    const hargaInput = document.createElement('input');
+    hargaInput.setAttribute('type', 'number');
+    hargaInput.setAttribute('name', 'harga[]');
+    hargaInput.setAttribute('placeholder', 'Harga');
+    
+    const jumlahInput = document.createElement('input');
+    jumlahInput.setAttribute('type', 'number');
+    jumlahInput.setAttribute('name', 'jumlah[]');
+    jumlahInput.setAttribute('placeholder', 'Jumlah');
+    
+    document.querySelector('form').insertBefore(itemInput, document.querySelector('button[type="button"]'));
+    document.querySelector('form').insertBefore(hargaInput, document.querySelector('button[type="button"]'));
+    document.querySelector('form').insertBefore(jumlahInput, document.querySelector('button[type="button"]'));
+}
+</script>
+
+</body>
+</html>

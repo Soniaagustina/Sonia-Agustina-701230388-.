@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            justify-content:left;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+
+        }
+        input[type="button"] {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="name">Nama Mahasiswa</label>
+        <input type="text" id="name" placeholder=".....">
+
+        <label for="uts">Ujian Tengah Semester</label>
+        <input type="text" id="uts" placeholder="Nilai UTS">
+
+        <label for="tugas">Tugas Mandiri</label>
+        <input type="text" id="tugas" placeholder="Nilai Tugas Mandiri">
+
+        <label for="uas">Ujian Akhir Semester</label>
+        <input type="text" id="uas" placeholder="Nilai UAS">
+
+        <div>
+            <input type="button" value="Hitung Nilai" onclick="calculateGrade()">
+            <input type="button" value="Reset" onclick="resetFields()">
+        </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            var name = document.getElementById("name").value;
+            var uts = parseFloat(document.getElementById("uts").value);
+            var tugas = parseFloat(document.getElementById("tugas").value);
+            var uas = parseFloat(document.getElementById("uas").value);
+
+            if (isNaN(uts) || isNaN(tugas) || isNaN(uas)) {
+                document.getElementById("result").textContent = "Masukkan nilai yang valid.";
+                return;
+            }
+
+            var avg = (uts + tugas + uas) / 3;
+            var grade;
+            if (avg >= 85) {
+                grade = "A";
+            } else if (avg >= 70) {
+                grade = "B";
+            } else {
+                grade = "C";
+            }
+
+            var resultText = name + " mendapatkan nilai rata-rata " + avg.toFixed(2) + " (" + grade + ") dan ";
+            resultText += (avg >= 70) ? "lulus" : "tidak lulus";
+
+            document.getElementById("result").textContent = resultText;
+        }
+
+        function resetFields() {
+            document.getElementById("name").value = "";
+            document.getElementById("uts").value = "";
+            document.getElementById("tugas").value = "";
+            document.getElementById("uas").value = "";
+            document.getElementById("result").textContent = "";
+        }
+    </script>
+</body>
+</html>
